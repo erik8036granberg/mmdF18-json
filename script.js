@@ -35,7 +35,8 @@
 				klon.querySelector(".data-kortbeskrivelse").textContent = menuitem.kortbeskrivelse;
 				klon.querySelector(".data-langbeskrivelse").textContent = menuitem.langbeskrivelse;
 				klon.querySelector(".data-oprindelsesregion").textContent = menuitem.oprindelsesregion;
-				klon.querySelector("img").src = "imgs/small/" + menuitem.billede + "_sm.jpg";
+				klon.querySelector("img").src = "imgs/small/" + menuitem.billede + "-sm.jpg";
+				klon.querySelector("img").alt = menuitem.kortbeskrivelse;
 
 				//	    tilføj html
 				modtager.appendChild(klon);
