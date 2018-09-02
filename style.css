@@ -37,6 +37,8 @@ h2 {
 	font-size: 1.3rem;
 }
 
+/* Layoutområder */
+
 header {
 	font-family: 'Russo One', sans-serif;
 	background-color: #ff8c00;
@@ -84,7 +86,7 @@ section {
 
 
 article {
-	padding: 3vw;
+	padding: 5vw;
 }
 
 article:nth-child(odd) {
@@ -98,6 +100,8 @@ footer {
 	grid-row-start: 4;
 	grid-row-end: 5;
 }
+
+/* vis-skjul data */
 
 .data-id {
 	display: none;
@@ -117,7 +121,7 @@ footer {
 
 /* media queries */
 
-@media all and (min-width: 480px) {
+@media screen and (min-width: 480px) {
 	nav {
 		grid-column-start: 2;
 	}
@@ -141,22 +145,31 @@ footer {
 
 }
 
-@media all and (min-width: 736px) {
+@media screen and (min-width: 736px) {
 	section {
 		grid-template-columns: repeat(2, 1fr);
+		grid-row-gap: 3vw;
+	}
+	article {
+		padding: 3vw;
 	}
 }
 
-@media all and (min-width: 980px) {
+@media screen and (min-width: 980px) {
 	...
 }
 
-@media all and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
 	section {
 		grid-template-columns: repeat(3, 1fr);
+		grid-row-gap: 0;
+	}
+
+	article {
+		padding: 2vw;
 	}
 }
 
-@media all and (min-width: 1690px) {
+@media screen and (min-width: 1690px) {
 	...
 }
