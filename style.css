@@ -1,0 +1,148 @@
+/* generelt */
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	grid-template-rows: 20% 20% 20% 20%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+img {
+	width: 100%;
+}
+
+p {
+	line-height: 1.6rem;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Russo One', sans-serif;
+	text-transform: uppercase;
+	color: #3b759f;
+}
+
+h1 {
+	font-size: 2.5rem;
+	letter-spacing: 0.05rem;
+}
+
+h2 {
+	font-size: 1.3rem;
+}
+
+header {
+	font-family: 'Russo One', sans-serif;
+	background-color: #ff8c00;
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	display: grid;
+	grid-template-columns: repeat(5, 20%);
+}
+
+header .logosymbol {
+	grid-column-start: 1;
+	grid-column-end: 1;
+	margin: 0 2vw 0 0;
+}
+
+header .logotext h1 {
+	grid-column-start: 2;
+	grid-column-end: 6;
+	color: #ff0000;
+	font-size: 6vw;
+	white-space: nowrap;
+	margin: 5.3vw 0 0;
+	padding: 0;
+}
+
+nav {
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+main {
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+section {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+
+article {
+	padding: 3vw;
+}
+
+article:nth-child(odd) {
+	background-color: #d1d1d1;
+}
+
+footer {
+	background-color: #606060;
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+/* media queries */
+
+@media all and (min-width: 480px) {
+	nav {
+		grid-column-start: 2;
+	}
+
+	main {
+		grid-column-start: 2;
+		grid-column-end: 5;
+		padding: 0;
+	}
+
+	section {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	footer {
+		background-color: #606060;
+		grid-column-start: 1;
+		grid-column-end: 6;
+	}
+
+}
+
+@media all and (min-width: 736px) {
+	section {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media all and (min-width: 980px) {
+	...
+}
+
+@media all and (min-width: 1280px) {
+	section {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media all and (min-width: 1690px) {
+	...
+}
