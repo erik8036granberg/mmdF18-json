@@ -18,28 +18,26 @@
 		</div>
 	</header>
 	<nav>
-		<button id="nav_alle">Alle retter</button>
-		<button id="nav_forretter">Forretter</button>
-		<button id="nav_hovedretter">Forretter</button>
-		<button id="nav_desserter">Desserter</button>
-		<button id="nav_drikkevarer">Drikkevarer</button>
+		<button class="nav-knap" data-kategori="alle">Alle retter</button>
+		<button class="nav-knap" data-kategori="forretter">Forretter</button>
+		<button class="nav-knap" data-kategori="hovedretter">Hovedretter</button>
+		<button class="nav-knap" data-kategori="desserter">Desserter</button>
+		<button class="nav-knap" data-kategori="drikkevarer">Drikkevarer</button>
 	</nav>
 	<main>
-		<h1>Menu</h1>
+		<h1></h1>
 		<section class="data-container"></section>
-		<template class="data-template">
+	</main>
+	<template class="data-template">
 		<article>
-		<img src="" alt="">
-			<p class="data-id"></p>
-			<h2 class="data-navn"></h2>
-			<p class="data-katagori"></p>
+			<img src="" alt="">
+			<h2></h2>
 			<p class="data-kortbeskrivelse"></p>
-			<p class="data-langbeskrivelse"></p>
 			<p class="data-pris"></p>
-			<sp class="data-oprindelsesregion"></p>
+			<p class="data-kategori"></p>
 		</article>
 	</template>
-	</main>
+
 	<footer>Hej med dig</footer>
 	<script src="script.js"></script>
 </body>
