@@ -2,6 +2,7 @@
 	let menu;
 	let dest = document.querySelector(".data-container");
 	let kategoriFilter = "alle";
+	let modal = document.querySelector("#modal");
 
 	//		dokument DOM loadet
 	document.addEventListener("DOMContentLoaded", hentJson);
@@ -48,6 +49,11 @@
 
 				//		klon til template
 				let klon = temp.cloneNode(true).content;
+
+				//indsætter eventlistner på indhendtede billeder
+				klon.querySelector(".itemklik").addEventListener("click", () => {
+					visModal(menuitem);
+				});
 				klon.querySelector("img").src = "imgs/small/" + menuitem.billede + "-sm.jpg";
 				klon.querySelector("img").alt = menuitem.kortbeskrivelse;
 				klon.querySelector("h2").textContent = menuitem.navn;
@@ -56,11 +62,29 @@
 				klon.querySelector(".data-kategori").textContent = menuitem.kategori;
 
 
+
 				//	    tilføj html DOM
 				dest.appendChild(klon);
 				console.log("loop er kørt");
 			}
 		})
+	}
+
+	//viser modal ved at skite display-værdi i css (vis), og starter skjulModal
+	function visModal(menuitemet) {
+		modal.classList.add("vis");
+		modal.querySelector("button").addEventListener("click", skjulModal);
+
+		//hent data fra indlæst "post"
+		modal.querySelector(".modal-navn").textContent = menuitemet.navn;
+		modal.querySelector("img").src = menuitemet.billede;
+		modal.querySelector("img").alt = "foto af " + menuitemet.billede;
+	}
+
+	//skjuler modal ved slå css "vis" fra
+	function skjulModal() {
+		modal.classList.remove("vis");
+		window.scrollTo(0);
 	}
 
 	//				let klon = temp.cloneNode(true).content;

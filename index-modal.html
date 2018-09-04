@@ -5,13 +5,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Babushka site - Erik Granberg</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style-modal.css">
 	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
-
+	<section id="modal">
+		<div id="modal-content">
+			<button>Luk</button>
+			<h2 class="modal-navn"></h2>
+			<img class="modal-navn" src="" alt="">
+		</div>
+	</section>
 	<header>
 		<div class="logosymbol"><img src="imgs/logo_symbol.svg" alt="Bistro babushka logo"></div>
 		<div class="logotext">
@@ -19,7 +25,7 @@
 		</div>
 	</header>
 	<nav>
-		<button class="nav-knap" data-kategori="alle">Alle Retter</button>
+		<button class="nav-knap" data-kategori="alle">Alle retter</button>
 		<button class="nav-knap" data-kategori="forretter">Forretter</button>
 		<button class="nav-knap" data-kategori="hovedretter">Hovedretter</button>
 		<button class="nav-knap" data-kategori="desserter">Desserter</button>
@@ -30,7 +36,7 @@
 		<section class="data-container"></section>
 	</main>
 	<template class="data-template">
-		<article>
+		<article class="data-id">
 			<img src="" alt="">
 			<h2></h2>
 			<p class="data-kortbeskrivelse"></p>
@@ -40,7 +46,7 @@
 	</template>
 
 	<footer>Hej med dig</footer>
-	<script src="script.js"></script>
+	<script src="script-modal.js"></script>
 </body>
 
 
