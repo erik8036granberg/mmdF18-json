@@ -54,9 +54,10 @@
 						window.location.href = "single.html?id=" + menuitem.id + "&tilbagesortering=" + kategoriFilter;
 					});
 					dest.querySelector("h2").textContent = menuitem.navn;
-					dest.querySelector(".data-kortbeskrivelse").textContent = menuitem.kortbeskrivelse;
+					dest.querySelector(".data-langbeskrivelse").textContent = menuitem.langbeskrivelse;
 					dest.querySelector(".data-pris").textContent = menuitem.pris + ",-";
-					dest.querySelector(".data-kategori").textContent = menuitem.kategori;
+					dest.querySelector(".data-oprindelsesregion").innerHTML = "<span class='bold'>Oprindelsesregion:</span> " + menuitem.oprindelsesregion;
+
 				}
 			})
 		}

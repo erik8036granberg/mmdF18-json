@@ -8,6 +8,12 @@
 		let dest = document.querySelector(".data-container");
 		let kategoriFilter = "alle";
 
+		//		check for tilbagesortering og vælg denne
+		if (tilbagesortering != null) {
+			kategoriFilter = tilbagesortering;
+		} else {
+			let kategoriFilter = "alle";
+		};
 
 
 		//		dokument DOM loadet
@@ -22,21 +28,8 @@
 
 			//		test json-import
 			console.log(menu);
-
-			testTilbagesortering();
-		}
-
-		//		check for tilbagesortering og vælg denne
-		function testTilbagesortering() {
-			if (tilbagesortering != "" || kategoriFilter != "null") {
-				dest.textContent = "";
-				kategoriFilter = tilbagesortering;
-				visMenu();
-			} else {
-				//		Gå vis-funktion
-				visMenu();
-			};
-		}
+			visMenu()
+		};
 
 		//		eventlistner for knapper, som sætter civilFilter til dey valgte
 		document.querySelectorAll(".nav-knap").forEach(knap => {
@@ -65,6 +58,7 @@
 
 					let klon = temp.cloneNode(true).content;
 
+					klon.querySelector(".data-id").textContent = menuitem.id;
 					klon.querySelector(".data-kategori").textContent = menuitem.kategori;
 					klon.querySelector("h2").textContent = menuitem.navn;
 					klon.querySelector(".data-kortbeskrivelse").textContent = menuitem.kortbeskrivelse;
@@ -74,7 +68,6 @@
 					klon.querySelector("img").addEventListener("click", () => {
 						window.location.href = "single.html?id=" + menuitem.id + "&tilbagesortering=" + kategoriFilter;
 					});
-					klon.querySelector(".data-id").textContent = menuitem.id;
 					//	    tilføj html DOM
 					dest.appendChild(klon);
 					console.log("loop er kørt");

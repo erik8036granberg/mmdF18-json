@@ -135,24 +135,6 @@ footer .aabningstider {
 	font-weight: bold;
 }
 
-/* vis-skjul data */
-
-.data-id {
-	display: none;
-}
-
-.data-kategori {
-	display: none;
-}
-
-.data-langbeskrivelse {
-	display: none;
-}
-
-.data-oprindelsesregion {
-	display: none;
-}
-
 #modal {
 	position: absolute;
 	width: 100vw;
@@ -186,6 +168,11 @@ footer .aabningstider {
 	margin: auto;
 	padding: 1vw 3vw 3vw;
 }
+
+button.tilbage {
+	margin: 0 auto 3vw;
+}
+
 
 /* media queries */
 
