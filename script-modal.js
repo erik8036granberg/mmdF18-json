@@ -77,11 +77,17 @@
 		modal.querySelector("img").src = "imgs/large/" + menuitemet.billede + ".jpg";
 		modal.querySelector("img").alt = "Foto af " + menuitemet.billede;
 		modal.querySelector(".modal-langbeskrivelse").textContent = menuitemet.langbeskrivelse;
-		modal.querySelector(".modal-oprindelsesregion").textContent = menuitemet.oprindelsesregion;
+		modal.querySelector(".modal-oprindelsesregion").innerHTML = "<span class='bold'>Oprindelsesregion:</span> " + menuitemet.oprindelsesregion;
 		modal.querySelector(".modal-pris").textContent = menuitemet.pris + ",-";
 
+		//udskift lang med kort beskrivelse hvis den mangler
 		if (menuitemet.langbeskrivelse == null) {
 			modal.querySelector(".modal-langbeskrivelse").textContent = menuitemet.kortbeskrivelse;
+		}
+
+		// fjern oprindelsesregion hvis den mangler
+		if (menuitemet.oprindelsesregion == null) {
+			modal.querySelector(".modal-oprindelsesregion").classList.add("skjul");
 		}
 	}
 
