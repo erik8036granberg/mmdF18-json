@@ -5,8 +5,8 @@ body {
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
 	display: grid;
-	grid-template-columns: 20% 20% 20% 20% 20%;
-	grid-template-rows: 20% 20% 20% 20%;
+	grid-template-columns: repeat(5, 20%);
+	grid-template-rows: repeat(4, 20%);
 }
 
 * {
@@ -29,7 +29,7 @@ h3 {
 }
 
 h1 {
-	font-size: 2.5rem;
+	font-size: 2rem;
 	letter-spacing: 0.05rem;
 }
 
@@ -54,6 +54,7 @@ header .logosymbol {
 	grid-column-start: 1;
 	grid-column-end: 1;
 	margin: 0 2vw 0 0;
+	line-height: 0;
 }
 
 header .logotext h1 {
@@ -114,6 +115,20 @@ footer {
 	grid-column-end: 6;
 	grid-row-start: 4;
 	grid-row-end: 5;
+	padding: 6vw;
+	color: #fff;
+}
+
+footer .adresse {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	padding: 0 0 5vw;
+}
+
+footer .aabningstider {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	padding: 0 0 5vw;
 }
 
 .bold {
@@ -150,11 +165,9 @@ footer {
 	transition: 0.5s;
 }
 
-#modal img {}
-
 #modal button {
-	max-width,
-	max-height: 3vw;
+	width,
+	height: 3vw;
 }
 
 #modal.vis {
@@ -199,9 +212,23 @@ footer {
 	}
 
 	footer {
-		background-color: #606060;
-		grid-column-start: 1;
+		display: grid;
+		grid-template-columns: repeat(5, 20%);
+		padding: 5vw 0 0;
+	}
+
+	footer .adresse {
+		grid-column-start: 2;
 		grid-column-end: 6;
+		padding: 0 0 5vw;
+	}
+
+	footer .aabningstider {
+		grid-column-start: 2;
+		grid-column-end: 6;
+		grid-row-start: 2;
+		grid-row-end: 3;
+		padding: 0 0 5vw;
 	}
 
 }
@@ -230,18 +257,31 @@ footer {
 
 }
 
-@media only screen and (orientation: landscape) {
-
-	#modal {
-		overflow: scroll;
-	}
-}
-
 @media screen and (min-width: 980px) {
 
 	header .logotext h1 {
 		font-size: 4.5vw;
 		margin: 5.5vw 0 0;
+	}
+
+	footer {
+		display: grid;
+		grid-template-columns: repeat(5, 20%);
+		padding: 5vw 0 0;
+	}
+
+	footer .adresse {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		padding: 0 0 5vw;
+	}
+
+	footer .aabningstider {
+		grid-column-start: 3;
+		grid-column-end: 6;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		padding: 0 0 5vw;
 	}
 }
 

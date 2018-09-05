@@ -50,7 +50,7 @@
 				klon.querySelector("img").src = "imgs/small/" + menuitem.billede + "-sm.jpg";
 				klon.querySelector("img").alt = menuitem.kortbeskrivelse;
 
-				//indsætter eventlistner på indhendtede billeder
+				//indsætter eventlistner på article-class
 				klon.querySelector(".selectitem").addEventListener("click", () => {
 					visModal(menuitem);
 				});
@@ -71,6 +71,7 @@
 	function visModal(menuitemet) {
 		modal.classList.add("vis");
 		modal.querySelector("button").addEventListener("click", skjulModal);
+		document.querySelector("#modal").addEventListener("click", skjulModal);
 
 		//hent data fra indlæst "post"
 		modal.querySelector(".modal-navn").textContent = menuitemet.navn;
@@ -85,7 +86,7 @@
 			modal.querySelector(".modal-langbeskrivelse").textContent = menuitemet.kortbeskrivelse;
 		}
 
-		// fjern oprindelsesregion hvis den mangler
+		// skjul oprindelsesregion hvis den mangler
 		if (menuitemet.oprindelsesregion == null) {
 			modal.querySelector(".modal-oprindelsesregion").classList.add("skjul");
 		}
@@ -94,6 +95,7 @@
 	//skjuler modal ved slå css "vis" fra
 	function skjulModal() {
 		modal.classList.remove("vis");
+		modal.querySelector(".modal-oprindelsesregion").removeEventListener("click", skjulModal)
 	}
 
 	//skjul lang beskrivelse
