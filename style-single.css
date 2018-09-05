@@ -236,25 +236,12 @@ footer .aabningstider {
 @media screen and (min-width: 736px) {
 
 	.data-container {
-		grid-template-columns: repeat(2, 1fr);
+		display: grid;
+		grid-template-columns: 1fr;
 	}
 	article {
 		padding: 3vw;
 	}
-
-	article:nth-child(odd) {
-		background-color: #fff;
-	}
-
-	article:nth-child(4n),
-	article:nth-child(4n+1) {
-		background: #fff;
-	}
-	article:nth-child(4n+2),
-	article:nth-child(4n+3) {
-		background: #ffdbb0;
-	}
-
 }
 
 @media screen and (min-width: 980px) {
@@ -288,7 +275,8 @@ footer .aabningstider {
 @media screen and (min-width: 1280px) {
 
 	.data-container {
-		grid-template-columns: repeat(3, 1fr);
+		display: grid;
+		grid-template-columns: 1fr;
 	}
 
 	#modal-content {

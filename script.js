@@ -1,6 +1,7 @@
 		//		hent og gem variabel fra URL
 		let urlParams = new URLSearchParams(window.location.search);
 		let tilbagesortering = urlParams.get("tilbagesortering");
+		console.log(tilbagesortering);
 
 		//		globale værdier - katagoriFilter til "alle"
 		let menu;
@@ -22,9 +23,12 @@
 			//		test json-import
 			console.log(menu);
 
+			testTilbagesortering();
+		}
 
-			//		ckeck for tilbagesortering og vælg denne
-			if (tilbagesortering != "") {
+		//		check for tilbagesortering og vælg denne
+		function testTilbagesortering() {
+			if (tilbagesortering != "" || kategoriFilter != "null") {
 				dest.textContent = "";
 				kategoriFilter = tilbagesortering;
 				visMenu();
@@ -32,8 +36,6 @@
 				//		Gå vis-funktion
 				visMenu();
 			};
-
-
 		}
 
 		//		eventlistner for knapper, som sætter civilFilter til dey valgte

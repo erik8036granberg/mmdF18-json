@@ -20,7 +20,7 @@
 			//		test json-import
 			console.log(menu);
 			//		Gå vis-funktion
-			visMenu();
+			visMenuItem();
 		}
 
 		//		eventlistner for knapper, som sætter civilFilter til dey valgte
@@ -37,7 +37,7 @@
 			visMenu();
 		}
 
-		function visMenu() {
+		function visMenuItem() {
 			console.log("visMenu");
 
 			//		Kør loop
@@ -48,7 +48,7 @@
 				if (menuitem.id == id) {
 
 					//indsæt data i klonen
-					dest.querySelector("img").src = "imgs/small/" + menuitem.billede + "-sm.jpg";
+					dest.querySelector("img").src = "imgs/large/" + menuitem.billede + ".jpg";
 					dest.querySelector("img").alt = menuitem.kortbeskrivelse;
 					dest.querySelector("img").addEventListener("click", () => {
 						window.location.href = "single.html?id=" + menuitem.id + "&tilbagesortering=" + kategoriFilter;
