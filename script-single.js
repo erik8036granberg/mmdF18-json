@@ -58,6 +58,16 @@
 					dest.querySelector(".data-pris").textContent = menuitem.pris + ",-";
 					dest.querySelector(".data-oprindelsesregion").innerHTML = "<span class='bold'>Oprindelsesregion:</span> " + menuitem.oprindelsesregion;
 
+					//udskift lang med kort beskrivelse hvis den mangler
+					if (menuitem.langbeskrivelse == null) {
+						dest.querySelector(".data-langbeskrivelse").textContent = menuitem.kortbeskrivelse;
+					}
+
+					// skjul oprindelsesregion hvis den mangler
+					if (menuitem.oprindelsesregion == null) {
+						dest.querySelector(".data-oprindelsesregion").classList.add("skjul");
+					}
+
 				}
 			})
 		}
