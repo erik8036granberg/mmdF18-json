@@ -9,14 +9,11 @@
 
 	async function hentJson() {
 		console.log("hentJson");
-
 		//		Hent liste og læg til variablen personer
 		let myJson = await fetch("json/menu.json");
 		menu = await myJson.json();
-
 		//		test json-import
 		console.log(menu);
-
 		//		Gå vis-funktion
 		visMenu();
 	}
@@ -36,11 +33,11 @@
 	}
 
 	function visMenu() {
-		console.log("visMenu");
-		document.querySelector("main h1").textContent = kategoriFilter;
 
 		//		Select modtager og template
 		let temp = document.querySelector(".data-template");
+		console.log("visMenu");
+		document.querySelector("main h1").textContent = kategoriFilter;
 
 		//		Kør loop med json-data
 		menu.forEach(menuitem => {
@@ -50,18 +47,18 @@
 				//		klon til template
 				let klon = temp.cloneNode(true).content;
 
-				//indsætter eventlistner på indhendtede billeder
-				klon.querySelector(".itemklik").addEventListener("click", () => {
-					visModal(menuitem);
-				});
 				klon.querySelector("img").src = "imgs/small/" + menuitem.billede + "-sm.jpg";
 				klon.querySelector("img").alt = menuitem.kortbeskrivelse;
+
+				//indsætter eventlistner på indhendtede billeder
+				klon.querySelector(".selectitem").addEventListener("click", () => {
+					visModal(menuitem);
+				});
+
 				klon.querySelector("h2").textContent = menuitem.navn;
 				klon.querySelector(".data-kortbeskrivelse").textContent = menuitem.kortbeskrivelse;
 				klon.querySelector(".data-pris").textContent = menuitem.pris + ",-";
 				klon.querySelector(".data-kategori").textContent = menuitem.kategori;
-
-
 
 				//	    tilføj html DOM
 				dest.appendChild(klon);
@@ -77,15 +74,16 @@
 
 		//hent data fra indlæst "post"
 		modal.querySelector(".modal-navn").textContent = menuitemet.navn;
-		modal.querySelector("img").src = menuitemet.billede;
-		modal.querySelector("img").alt = "foto af " + menuitemet.billede;
+		modal.querySelector("img").src = "imgs/large/" + menuitemet.billede + ".jpg";
+		modal.querySelector("img").alt = "Foto af " + menuitemet.billede;
 	}
 
 	//skjuler modal ved slå css "vis" fra
 	function skjulModal() {
 		modal.classList.remove("vis");
-		window.scrollTo(0);
 	}
+
+	//window.scrollTo(0);
 
 	//				let klon = temp.cloneNode(true).content;
 	//				klon.querySelector(".data-id").textContent = menuitem.id;
