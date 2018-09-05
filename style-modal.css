@@ -18,7 +18,7 @@ img {
 }
 
 p {
-	line-height: 1.6rem;
+	line-height: 1.5rem;
 }
 
 h1,
@@ -81,14 +81,23 @@ main {
 	grid-row-end: 4;
 }
 
+main h1 {
+	margin-left: 3vw;
+}
+
 .data-container {
 	display: grid;
 	grid-template-columns: 1fr;
 }
 
-.data-container .data-pris {
+.data-pris,
+.modal-pris {
 	font-weight: bold;
 	font-size: 150%;
+}
+
+.data-navn {
+	margin: 0 0 0 2vw;
 }
 
 article {
@@ -105,6 +114,10 @@ footer {
 	grid-column-end: 6;
 	grid-row-start: 4;
 	grid-row-end: 5;
+}
+
+.bold {
+	font-weight: bold;
 }
 
 /* vis-skjul data */
@@ -126,6 +139,7 @@ footer {
 }
 
 #modal {
+	position: absolute;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
@@ -138,9 +152,18 @@ footer {
 
 #modal img {}
 
+#modal button {
+	max-width,
+	max-height: 3vw;
+}
+
 #modal.vis {
 	opacity: 1;
 	pointer-events: all;
+}
+
+.skjul {
+	display: none;
 }
 
 #modal-content {
@@ -164,6 +187,10 @@ footer {
 		grid-column-start: 2;
 		grid-column-end: 5;
 		padding: 0;
+	}
+
+	main h1 {
+		margin-left: 0;
 	}
 
 	.data-container {
@@ -203,7 +230,12 @@ footer {
 
 }
 
+@media only screen and (orientation: landscape) {
 
+	#modal {
+		overflow: scroll;
+	}
+}
 
 @media screen and (min-width: 980px) {
 
@@ -217,6 +249,41 @@ footer {
 
 	.data-container {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	#modal-content {
+		margin-top: 15vh;
+		padding: 3vw 3vw 3vw;
+		display: grid;
+		grid-template-columns: 66% 33%;
+		grid-template-rows: repeat(10, 10%);
+	}
+
+	#modal img {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 11;
+	}
+
+	#modal .spacer {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 6;
+		grid-row-end: 11;
+	}
+
+	#modal .modal-langbeskrivelse {
+		padding: 0 2vw 0;
+	}
+
+	#modal .modal-navn {
+		padding: 0 2vw 0;
+	}
+
+	#modal button {
+		margin: 0 auto;
+
 	}
 
 	article {

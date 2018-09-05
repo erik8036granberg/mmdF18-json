@@ -76,6 +76,13 @@
 		modal.querySelector(".modal-navn").textContent = menuitemet.navn;
 		modal.querySelector("img").src = "imgs/large/" + menuitemet.billede + ".jpg";
 		modal.querySelector("img").alt = "Foto af " + menuitemet.billede;
+		modal.querySelector(".modal-langbeskrivelse").textContent = menuitemet.langbeskrivelse;
+		modal.querySelector(".modal-oprindelsesregion").textContent = menuitemet.oprindelsesregion;
+		modal.querySelector(".modal-pris").textContent = menuitemet.pris + ",-";
+
+		if (menuitemet.langbeskrivelse == null) {
+			modal.querySelector(".modal-langbeskrivelse").textContent = menuitemet.kortbeskrivelse;
+		}
 	}
 
 	//skjuler modal ved slå css "vis" fra
@@ -83,15 +90,4 @@
 		modal.classList.remove("vis");
 	}
 
-	//window.scrollTo(0);
-
-	//				let klon = temp.cloneNode(true).content;
-	//				klon.querySelector(".data-id").textContent = menuitem.id;
-	//				klon.querySelector(".data-katagori").textContent = menuitem.kategori;
-	//				klon.querySelector("h2").textContent = menuitem.navn;
-	//				klon.querySelector(".data-pris").textContent = menuitem.pris + ",-";
-	//				klon.querySelector(".data-kortbeskrivelse").textContent = menuitem.kortbeskrivelse;
-	//				klon.querySelector(".data-langbeskrivelse").textContent = menuitem.langbeskrivelse;
-	//				klon.querySelector(".data-oprindelsesregion").textContent = menuitem.oprindelsesregion;
-	//				klon.querySelector("img").src = "imgs/small/" + menuitem.billede + "-sm.jpg";
-	//				klon.querySelector("img").alt = menuitem.kortbeskrivelse;
+	//skjul lang beskrivelse
